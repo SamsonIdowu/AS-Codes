@@ -1,0 +1,49 @@
+Below are some ways to harden the program code:
+
+- Input validation: Validate all inputs to the program, especially inputs from external sources, to ensure they are within the expected range and format.
+
+- Use of secure libraries: Use secure libraries and functions instead of writing your own implementation. For example, use strcmp() instead of strcpy().
+
+- Sanitizing inputs: Ensure all inputs are sanitized before using them, especially inputs from external sources, to prevent any malicious data.
+
+- Use of secure data types: Use secure data types, such as size_t for buffer sizes and size_t for return values from functions, to prevent any unintended consequences.
+
+- Error handling: Handle all errors in a consistent and appropriate manner to prevent any unintended consequences.
+
+- Avoiding buffer overflow: Ensure that all buffer sizes are large enough to hold the data being written and prevent buffer overflow vulnerabilities.
+
+- Use of secure coding standards: Adhere to secure coding standards, such as OWASP Top 10 and CERT C Secure Coding Standard, to prevent common security vulnerabilities.
+
+- Use of static analysis tools: Use static analysis tools, such as clang-tidy and coverity, will also help to identify potential security vulnerabilities in the code.
+
+
+To introduce hardenings on a running-instance of the Program, the following can be done on the Platform (operating system) where the program is running:
+
+- Run the program with limited privileges: By default, programs run with the same privileges as the user who launches them. To reduce the attack surface, you can run the program with limited privileges using the setuid or setgid bits or using a tool like sudo or su.
+
+- Enable Address Space Layout Randomization (ASLR): ASLR randomizes the location of the program code in memory to make it more difficult for attackers to exploit memory-related vulnerabilities. 
+You can enable ASLR by running the following command in the terminal: sudo sysctl -w kernel.randomize_va_space=2
+
+- Enable data execution prevention (DEP): DEP marks certain memory regions as non-executable, making it more difficult for attackers to exploit buffer overflow vulnerabilities. 
+You can enable DEP by running the following command in the terminal: sudo sh -c 'echo 2 >/proc/sys/kernel/exec-shield'
+
+- Use memory protection: Memory protection features like mmap with MAP_PRIVATE and MAP_ANONYMOUS flags can be used to map memory regions as read-only or non-executable, making it more difficult for attackers to modify sensitive data or execute malicious code.
+
+- Use input validation: Input validation can help prevent security risks by checking user inputs for invalid or malicious values. This can be done by checking the lengths and contents of user inputs and rejecting invalid inputs.
+
+- Keep the system up-to-date: Keeping the system up-to-date with the latest security patches and updates helps ensure that known security vulnerabilities are addressed. You can use the apt-get upgrade command to update the system in Ubuntu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

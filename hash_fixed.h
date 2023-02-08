@@ -1,5 +1,5 @@
 /**
- * @Name : hash.h
+ * @Name : hash_fixed.h
  *
  * Fix: Header comment added
 **/
