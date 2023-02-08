@@ -31,7 +31,7 @@ void HashAdd(HashMap *map,PairValue *value) {
     unsigned idx = HashIndex(value->KeyName);
     // error: the data field in the HashMap struct is not initialized in the 'HashInit' function, and can lead to unexpected behavior when accessing uninitialized memory.
     // This can be exploited for arbitrary code execution and denial of service.
-    // Category - Configdentiality, Integrity & Availability
+    // Category - Confidentiality, Integrity & Availability
     if (map->data[idx]) 
         value->Next = map->data[idx]->Next;
     map->data[idx] = value;	
@@ -69,6 +69,8 @@ void HashDelete(HashMap *map, const char* key) {
 }
 
 void HashDump(HashMap *map) {
+    // The constant MAP_MAX is not defined in the code, and can cause a compile-error.
+    // Category = Availability
     for( unsigned i = 0; i < MAP_MAX; i++ ) {
         for( PairValue* val = map->data[i]; val != NULL; val = val->Next ) {
             // error: 'printf' does not have a format specifier to print the string stored in KeyName.
