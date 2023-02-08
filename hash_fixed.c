@@ -9,6 +9,7 @@
 #include <string.h>
 #include "hash_fixed.h"
 
+// I added the 'main' value function to return an integer value repesenting the program execution status
 int main(){
 
 unsigned HashIndex(const char* key) {

@@ -9,6 +9,8 @@
 #include <string.h>
 #include "hash.h"
 
+// The "main" function is absent in the code, therefore the code will not run.
+
 unsigned HashIndex(const char* key) {
     unsigned sum = 0;
     // error: the for loop condition is incorrect, as it uses the wrong variable type for 'c'.
