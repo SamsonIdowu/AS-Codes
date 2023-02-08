@@ -7,6 +7,9 @@
 #define __HASH__
 
     typedef struct {
+        // The key string value is set contantly at 255. This can potentially cause a buffer overflow issue and write beyond the end of the allocated memory for the array.
+        // This can lead to undefined behavior and potential security vulnerabilities, such as data corruption or execution of arbitrary code.
+        // Category = Confidentiality, Integrity & Availability
         #define KEY_STRING_MAX 255
 		char KeyName[KEY_STRING_MAX];
 		int  ValueCount;
@@ -20,7 +23,7 @@
         #define MAP_MAX 128
         // error: the data array not initialized, so accessing the elements of the array will result in undefined behavior.
 		// This can cause arbitrary code execution.
-        // Category - Configdentiality, Integrity & Availability
+        // Category - Confidentiality, Integrity & Availability
         PairValue* data[MAP_MAX];
 	} HashMap;
 

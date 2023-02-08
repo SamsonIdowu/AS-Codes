@@ -69,6 +69,8 @@ void HashDelete(HashMap *map, const char* key) {
 }
 
 void HashDump(HashMap *map) {
+    // The constant MAP_MAX is not defined in the code, and can cause a compile-error.
+    // Category = Availability
     for( unsigned i = 0; i < MAP_MAX; i++ ) {
         for( PairValue* val = map->data[i]; val != NULL; val = val->Next ) {
             // error: 'printf' does not have a format specifier to print the string stored in KeyName.
