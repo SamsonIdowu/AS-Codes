@@ -7,11 +7,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "hash.h"
+#include "hash_fixed.h"
+
+int main(){
 
 unsigned HashIndex(const char* key) {
     unsigned sum = 0;
-    // corrected the variable type of `c` to `const char*` so as to match the type of argument 'key'
+    // corrected the variable type of `c` to `const char*` so as to  tch the type of argument 'key'
     for (const char* c = key; *c; c++){
         sum += *c;
     }
@@ -76,4 +78,5 @@ void HashDump(HashMap *map) {
             printf("%s\n", val->KeyName);
         }
     }
+}
 }
